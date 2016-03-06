@@ -117,7 +117,7 @@ class WebhookHandler(webapp2.RequestHandler):
             if text == '/version':
                 setEnabled(chat_id, True)
                 reply('0.0.2a')
-            else if text == '/chat_id':
+            elif text == '/chat_id':
                 setEnabled(chat_id, True)
                 reply('vazio')
 

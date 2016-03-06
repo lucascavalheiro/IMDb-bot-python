@@ -12,7 +12,7 @@ import multipart
 # standard app engine imports
 #from google.appengine.api import urlfetch
 #from google.appengine.ext import ndb
-import webapp2
+#import webapp2
 
 TOKEN = '180187171:AAEVe8KA1fdah9MY79NgbVgBQfcIdjBoO88'
 

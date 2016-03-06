@@ -21,9 +21,9 @@ BASE_URL = 'https://api.telegram.org/bot' + TOKEN + '/'
 
 # ================================
 
-class EnableStatus(ndb.Model):
+#class EnableStatus(ndb.Model):
     # key name: str(chat_id)
-    enabled = ndb.BooleanProperty(indexed=False, default=False)
+#    enabled = ndb.BooleanProperty(indexed=False, default=False)
 
 
 # ================================
@@ -44,19 +44,19 @@ def getEnabled(chat_id):
 
 class MeHandler(webapp2.RequestHandler):
     def get(self):
-        urlfetch.set_default_fetch_deadline(60)
+        #urlfetch.set_default_fetch_deadline(60)
         self.response.write(json.dumps(json.load(urllib2.urlopen(BASE_URL + 'getMe'))))
 
 
 class GetUpdatesHandler(webapp2.RequestHandler):
     def get(self):
-        urlfetch.set_default_fetch_deadline(60)
+        #urlfetch.set_default_fetch_deadline(60)
         self.response.write(json.dumps(json.load(urllib2.urlopen(BASE_URL + 'getUpdates'))))
 
 
 class SetWebhookHandler(webapp2.RequestHandler):
     def get(self):
-        urlfetch.set_default_fetch_deadline(60)
+        #urlfetch.set_default_fetch_deadline(60)
         url = self.request.get('url')
         if url:
             self.response.write(json.dumps(json.load(urllib2.urlopen(BASE_URL + 'setWebhook', urllib.urlencode({'url': url})))))
@@ -64,7 +64,7 @@ class SetWebhookHandler(webapp2.RequestHandler):
 
 class WebhookHandler(webapp2.RequestHandler):
     def post(self):
-        urlfetch.set_default_fetch_deadline(60)
+        #urlfetch.set_default_fetch_deadline(60)
         body = json.loads(self.request.body)
         logging.info('request body:')
         logging.info(body)
